@@ -15,9 +15,10 @@
 	</div>
 
 	Calendar of Events
-	<table>
+	<table border="1">
 		<tbody data-bind="foreach: selectedEvents">
-			<tr>
+
+			<tr data-bind="style: { height: (getDuration($data) * 15) + 'px' }">
 				<td data-bind="text: getEventBlock($data)"></td>
 			</tr>
 		</tbody>
