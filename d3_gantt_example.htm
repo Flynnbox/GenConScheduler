@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Gantt Chart Example 1</title>
+<link type="text/css" href="http://mbostock.github.io/d3/style.css" rel="stylesheet" />
+<link type="text/css" href="example.css" rel="stylesheet" />
+</head>
+<body>
+	<script type="text/javascript" src="../lib/d3/d3.v3.min.js"></script>
+	<script type="text/javascript" src="../gantt-chart-d3.js"></script>
+	<script type="text/javascript">
+
+var taskNames = ["Option 1", "Option 2", "Option 3", "Option 4", "Option 5", "Option 6", "Option 7", "Option 8", "Option 9", "Option 10", "Option 11", "Option 12", "Option 13", "Option 14", "Option 15", "Option 16", "Option 17", "Option 18", "Option 19", "Option 20"];
+
+var taskStatus = {
+	"SUCCEEDED": "bar",
+	"FAILED": "bar-failed",
+	"RUNNING": "bar-running",
+	"KILLED": "bar-killed"
+};
+
+var format = "%H:%M";
+
+		var gantt = d3.gantt().taskTypes(taskNames).taskStatus(taskStatus).tickFormat(format);
+		gantt(tasks);
+
+	</script>
+</body>
+</html>

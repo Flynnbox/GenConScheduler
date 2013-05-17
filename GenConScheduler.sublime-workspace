@@ -1,0 +1,655 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"fun",
+				"function"
+			],
+			[
+				"sess",
+				"sessions"
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"com",
+				"comPort"
+			],
+			[
+				"d",
+				"drawSprite"
+			],
+			[
+				"dr",
+				"drawBoard"
+			],
+			[
+				"sp",
+				"spriteFilePath"
+			],
+			[
+				"load",
+				"loadCount"
+			],
+			[
+				"l",
+				"length"
+			],
+			[
+				"im",
+				"imageFilePathArray"
+			],
+			[
+				"image",
+				"loadImage"
+			],
+			[
+				"draw",
+				"drawImage"
+			],
+			[
+				"cre",
+				"createSpriteProvider"
+			],
+			[
+				"i",
+				"imageFilePath"
+			],
+			[
+				"start",
+				"startY"
+			],
+			[
+				"tr",
+				"traps"
+			],
+			[
+				"ps",
+				"positionsY"
+			],
+			[
+				"pos",
+				"positionsY"
+			],
+			[
+				"p",
+				"piece"
+			],
+			[
+				"he",
+				"height"
+			],
+			[
+				"complet",
+				"Completely"
+			],
+			[
+				"Working",
+				"WorkingDaysPerYear"
+			],
+			[
+				"Su",
+				"SurveyGuid"
+			],
+			[
+				"survey",
+				"surveyGuid"
+			],
+			[
+				"is",
+				"IsCompleted"
+			],
+			[
+				"Sur",
+				"surveyGuid"
+			],
+			[
+				"iS",
+				"IsCompleted"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "Packages/User/Chrome.sublime-build",
+	"command_palette":
+	{
+		"height": 311.0,
+		"selected_items":
+		[
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"json",
+				"Set Syntax: JSON"
+			],
+			[
+				"form",
+				"Pretty JSON: Reformat (Pretty Print) JSON"
+			],
+			[
+				"task",
+				"Tasks: New document"
+			],
+			[
+				"tas",
+				"Tasks: New document"
+			],
+			[
+				"packa",
+				"Package Control: List Packages"
+			],
+			[
+				"list",
+				"Package Control: List Packages"
+			],
+			[
+				"package con	",
+				"Package Control: List Packages"
+			],
+			[
+				"pac",
+				"Package Control: List Packages"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"set jso",
+				"Pretty JSON: Reformat (Pretty Print) JSON"
+			],
+			[
+				"",
+				"Set Syntax: JSON"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"install	",
+				"Package Control: Install Package"
+			],
+			[
+				"pa",
+				"Package Control: Discover Packages"
+			]
+		],
+		"width": 464.0
+	},
+	"console":
+	{
+		"height": 132.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/aflynn/Documents/GitHub/GenConScheduler/calendar.htm",
+		"/C/LogFiles/IhiLogs/INSIGHT_2013-05-16.0",
+		"//CBAPPWEB01/d$/Logfiles/IHILogs/INSIGHT_2013-05-16.0",
+		"/C/Users/aflynn/Downloads/app/www/includes/js/cordova-2.1.0.js",
+		"/C/Users/aflynn/Downloads/app/CordovaSourceDictionary.xml",
+		"/C/Users/aflynn/Downloads/app/WMAppManifest.xml",
+		"/C/Users/aflynn/Downloads/app/AppManifest.xaml",
+		"//CBAPPWEB01/d$/Logfiles/IHILogs/INSIGHT_2013-05-15.0",
+		"//CBAPPWEB01/d$/Logfiles/IHILogs/INSIGHT_2013-05-14.0",
+		"//TESTAPPWEB/d$/Logfiles/IHILogs/INSIGHT_2013-05-14.0",
+		"/C/IHI_MAIN/trunk/Database/IHI/ChangeScripts/Insight/2013_05_08_UpdateProjectStatus.sql",
+		"/C/IHI_MAIN/trunk/Database/IHI/ChangeScripts/Insight/2013_05_09_AddProjectPersonBudgetConstraint.sql",
+		"/C/IHI_MAIN/trunk/Insight/_Config_IHI/CBAPPWEB01/Web.config",
+		"/C/Users/aflynn/Documents/Development/ERP/Insight/Insight Meeting Notes.txt",
+		"/C/Users/aflynn/Documents/Development/IHI Architecture Thought.txt",
+		"/C/IHI_MAIN/trunk/Webroot/_Config_IHI/TESTAPPWEB/Web.config",
+		"/C/IHI_MAIN/trunk/Webroot/_Config_IHI/CBAPPWEB01/Web.config",
+		"/C/IHI_MAIN/trunk/Webroot/_Config_IHI/DRAPPWEB01/Test_Web.config",
+		"/C/IHI_MAIN/trunk/Webroot/_Config_IHI/DRAPPWEB01/GoLive_Web.config",
+		"/C/IHI_MAIN/trunk/Webroot/_Config_IHI/PRODAPPWEB01/Test_Web.config",
+		"/C/IHI_MAIN/trunk/Webroot/_Config_IHI/PRODAPPWEB01/GoLive_Web.config",
+		"/C/IHI_MAIN/trunk/Webroot/_Config_IHI/CBAPPWEB01/FinalWeb.config",
+		"/C/IHI_MAIN/trunk/Webroot/_Config_IHI/DEVAPPWEB/Web.config",
+		"/C/IHI_MAIN/trunk/Webroot/wwwroot/Web.config",
+		"/C/IHI_MAIN/trunk/LMS/MobileLMS/_Config_IHI/CBAPPWEB01/Web.config",
+		"/C/IHI_MAIN/trunk/LMS/MobileLMS/Web.config",
+		"/C/IHI_MAIN/trunk/LMS/_Config_IHI/CBAPPWEB01/Web.config",
+		"//TESTAPPWEB/d$/Inetpub/IHI.org/MobileEventsApi/Web.config",
+		"/C/IHI_MAIN/trunk/Offerings/MobileEventsApi/Api/EventsController.cs",
+		"/C/IHI_MAIN/trunk/Sandbox/aflynn/PrototypeWebToCom/LeadRetrievalIssuesLog.txt",
+		"/C/Users/aflynn/Documents/Development/Lead Retrieval/LeadRetrievalIssuesLog.txt",
+		"/C/Users/aflynn/Documents/Development/Lead Retrieval/Lead Retrieval.txt",
+		"/C/IHI_MAIN/trunk/Database/IHI/StoredProcedures/Events/dbo.ofme_SelectTwitterTagsByOfferingId .prc",
+		"//TESTAPPWEB/d$/Logfiles/IHILogs/MOBILEEVENTSAPI_2013-05-06.0",
+		"/C/IHI_MAIN/trunk/Database/IHI/StoredProcedures/Insight/vw_ins_ProjectPersonnelBudget.viw",
+		"/C/IHI_MAIN/trunk/Database/IHI/StoredProcedures/Insight/vw_ins_ProjectPersonnelBudgetAndActual.viw",
+		"/C/IHI_MAIN/trunk/Offerings/MobileEventsApi/Formatters/HtmlContentParser.cs",
+		"/C/IHI_MAIN/trunk/Database/IHI/StoredProcedures/Events/dbo.ofme_SelectOfferingByOfferingId.prc",
+		"/C/IHI_MAIN/trunk/Database/IHI/StoredProcedures/Events/dbo.ofme_IsOrderIdValid.prc",
+		"/C/LogFiles/IhiLogs/MobileEventsAPI_2013-05-02.0",
+		"/C/IHI_MAIN/trunk/Database/IHI/StoredProcedures/Events/dbo.ofme_SelectOfferingMaterialByOfferingId.prc",
+		"/C/IHI_MAIN/trunk/Database/IHI/StoredProcedures/Events/dbo.ofme_SelectOfferingResourcesByOfferingId.prc",
+		"//TESTAPPWEB/d$/Logfiles/IHILogs/MobileEventsAPI_2013-05-02.0",
+		"/C/Users/aflynn/Documents/Development/Twitter API Notes",
+		"/C/Users/aflynn/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/C/LogFiles/IhiLogs/MobileEventsAPI_2013-05-01.0",
+		"/C/LogFiles/IhiLogs/MobileEventsAPI_2013-04-30.0",
+		"//TESTAPPWEB/d$/Logfiles/IHILogs/MobileEventsAPI_2013-04-30.0",
+		"/C/IHI_MAIN/trunk/LMS/MobileLMS/Global.asax.cs",
+		"/C/IHI_MAIN/trunk/Database/IHI/ChangeScripts/Events/2013_04_28_MobileAnnouncements_001.sql",
+		"/C/IHI_MAIN/trunk/Database/IHI/StoredProcedures/Events/dbo.ofme_SelectSessionsBySessionTypeId.prc",
+		"//TESTAPPWEB/d$/Logfiles/IHILogs/MobileEventsAPI_2013-04-25.0",
+		"/C/IHI_MAIN/trunk/MobileApps/OpenSchoolMobile/appfiles/includes/js/serviceApi.js",
+		"/C/IHI_MAIN/trunk/MobileApps/OpenSchoolMobile/appfiles/twitter.html",
+		"/C/IHI_MAIN/trunk/PowerShell/Main/BuildDeploy/Configs/WebApplication/LeadRetrieval_Client.xml",
+		"/C/Users/aflynn/Documents/Development/Lead Retrieval/2013 Summit/Investigate Data Issues.sql",
+		"/C/Users/aflynn/Documents/Development/Planning & Budgeting/Planning & Budgeting Notes.txt",
+		"/C/IHI_MAIN/trunk/PowerShell/Main/Modules/IHI/ScriptModules/BuildDeploy/Common.psm1",
+		"/C/Users/aflynn/AppData/Local/Microsoft/Windows/Temporary Internet Files/Content.Outlook/QLXPSISL/eventandsponsorlogos.txt",
+		"/C/IHI_MAIN/trunk/Offerings/MobileEventsApi/Verify.htm",
+		"/C/Users/aflynn/AppData/Local/Microsoft/Windows/Temporary Internet Files/Content.Outlook/QLXPSISL/features.txt",
+		"/C/IHI_MAIN/trunk/Offerings/MobileEventsApi/ViewModels/OfferingEvent.cs",
+		"/C/IHI_MAIN/trunk/Offerings/MobileEventsApi/ViewModels/Map.cs",
+		"/C/IHI_MAIN/trunk/Offerings/MobileEventsApi/ViewModels/MapCluster.cs",
+		"/C/IHI_MAIN/trunk/Offerings/MobileEventsApi/ViewModels/Resource.cs",
+		"/C/IHI_MAIN/trunk/Offerings/MobileEventsApi/ViewModels/Features.cs",
+		"/C/IHI_MAIN/trunk/Offerings/MobileEventsApi/ViewModels/OfferingMaterials.cs",
+		"/C/IHI_MAIN/trunk/Offerings/MobileEventsApi/ViewModels/Material.cs",
+		"/C/IHI_MAIN/trunk/Offerings/MobileEventsApi/ViewModels/OrderAndEventPayload.cs",
+		"/C/IHI_MAIN/trunk/Sandbox/aflynn/Insight/Improvement Advisors/ImprovementAdvisorBudgets_20130412.csv",
+		"/C/IHI_MAIN/trunk/Sandbox/aflynn/Insight/ResourcePlanning-LoadData-Budgets_v4.sql",
+		"/C/IHI_MAIN/trunk/Sandbox/aflynn/Insight/Resource Planning FY2014 Budget Import/Insight_Roles_20130329.csv",
+		"/C/IHI_MAIN/trunk/Database/IHI/StoredProcedures/Insight/vw_ins_ImprovementAdvisor.viw",
+		"/C/Users/aflynn/Documents/Development/Lead Retrieval/2013 Summit/Beth_ihi_LeadRetrieval_Client_log_2013-04-07.0",
+		"/C/Users/aflynn/Documents/Development/Lead Retrieval/2013 Summit/Beth_ihi_LeadRetrieval_Client_log_2013-04-07.02013-04-07.0",
+		"/C/Users/aflynn/AppData/Roaming/Microsoft/VisualStudio/11.0/ActivityLog.xml",
+		"/C/LogFiles/IhiLogs/INSIGHT_2013-04-18.0",
+		"//CBAPPWEB01/d$/Logfiles/IHILogs/INSIGHT_2013-04-18.0",
+		"/C/LogFiles/IhiLogs/MobileEventsAPI_2013-04-17.0",
+		"/C/IHI_MAIN/trunk/Offerings/MobileEventsApi/_Config_IHI/CBAPPWEB01/Web.config",
+		"/C/IHI_MAIN/trunk/LeadRetrieval/Test/BizTier/LeadRetrieval/GenerateSalesLeadDocument.cs",
+		"/C/IHI_MAIN/trunk/LeadRetrieval/Test/BizTier/LeadRetrieval/EmailSalesLeadDocument.cs",
+		"/C/IHI_MAIN/trunk/LeadRetrieval/BizTier/LeadRetrieval/SalesLeadEmailCoordinator.cs",
+		"/C/Users/aflynn/AppData/Local/Microsoft/Windows/Temporary Internet Files/Content.Outlook/QLXPSISL/ihi_LeadRetrieval_Client_log_2013-04-07.0",
+		"/C/Users/aflynn/AppData/Local/Microsoft/Windows/Temporary Internet Files/Content.Outlook/QLXPSISL/ihi_LeadRetrieval_Client_log_2013-04-08.0",
+		"/C/LogFiles/IhiLogs/MobileEventsAPI_2013-04-11.0",
+		"//TESTAPPWEB/d$/Logfiles/IHILogs/MOBILEEVENTSAPI_2013-04-11.0",
+		"//DEVAPPWEB/d$/Logfiles/IHILogs/MOBILEEVENTSAPI_2013-04-11.0",
+		"/C/LogFiles/IhiLogs/INSIGHT_2013-04-11.0",
+		"/C/IHI_MAIN/trunk/Offerings/MobileEventsApi/_Config_IHI/TESTAPPWEB/Web.config",
+		"/C/IHI_MAIN/trunk/Offerings/MobileEventsApi/_Config_IHI/DEVAPPWEB/Web.config",
+		"/C/IHI_MAIN/trunk/Insight/BizTier/Projects/ProjectInfo.cs",
+		"/C/LogFiles/IhiLogs/INSIGHT_2013-04-09.0",
+		"/C/LogFiles/IhiLogs/INSIGHT_2013-04-10.0",
+		"//CBAPPWEB01/d$/Logfiles/IHILogs/INSIGHT_2013-04-09.0",
+		"/C/IHI_MAIN/trunk/eDefine/eDefine.Framework.Security/Users/UserIdentity.cs",
+		"/C/IHI_MAIN/trunk/Database/IHI/StoredProcedures/Insight/030_vw_ins_timeMonthlyEmployeeTimesheetData.viw",
+		"/C/Users/aflynn/Desktop/LMS_2013-04-08.0",
+		"/C/LogFiles/IhiLogs/INSIGHT_2013-04-08.0",
+		"//CBappweb01/d$/Inetpub/IHI.org/LMS/web.config",
+		"//CBAPPWEB01/d$/Logfiles/IHILogs/INSIGHT_2013-04-08.0",
+		"/C/IHI_MAIN/trunk/Sandbox/aflynn/Insight/Resource Planning FY2014 Budget Import/Insight_Staff_20130329.csv",
+		"/C/IHI_MAIN/trunk/Webroot/wwwroot/demo/jquery-ajax-progress/js/jquery.ajax-progress.js",
+		"/C/IHI_MAIN/trunk/Sandbox/aflynn/Insight/Resource Planning FY2014 Budget Import/ResourcePlanning-LoadData-Budgets_v4.sql",
+		"/C/IHI_MAIN/trunk/Sandbox/aflynn/Insight/Resource Planning FY2014 Budget Import/CleanUpBadImport.sql",
+		"/C/IHI_MAIN/trunk/Sandbox/aflynn/Insight/Resource Planning FY2014 Budget Import/ResourcePlanning-LoadData-Budgets-Roles_v4.sql",
+		"/C/IHI_MAIN/trunk/Sandbox/aflynn/Insight/Resource Planning FY2014 Budget Import/ResourcePlanning-InsightProjectStaffBudget-Insert.sql",
+		"/C/IHI_MAIN/trunk/Offerings/MobileEventsApi/Web.config",
+		"/C/Users/aflynn/Documents/Development/Mobile Events/Mockups/Sample Data Offering Id 2206 v6.js",
+		"/C/LogFiles/IhiLogs/MobileEventsAPI_2013-03-29.0",
+		"/C/Users/aflynn/Documents/Development/Insight/Resource Planning FY2014 Budget Import/Insight_Roles_20130329.csv",
+		"/C/Users/aflynn/Documents/Development/Insight/Resource Planning FY2014 Budget Import/Insight_Staff_20130329.csv",
+		"/C/Users/aflynn/Documents/Development/Insight/Adaptive Planning Import/AdaptivePlanning-LoadData-Projects2.sql",
+		"/C/Users/aflynn/Documents/Development/Insight/Adaptive Planning Import/AdaptivePlanning-LoadData-Budgets3.sql",
+		"/C/Users/aflynn/Documents/Development/Mobile Events/Mockups/Sample Data Offering Id 2206 v5.js",
+		"/C/LogFiles/IhiLogs/MobileEventsAPI_2013-03-28.0",
+		"/C/Users/aflynn/Documents/Development/Mobile Events/Mockups/Sample Data Offering Id 2206 v4.js",
+		"/C/Users/aflynn/Documents/Development/Mobile Events/Mockups/Sample Data Offering Id 2206 v2.js",
+		"/C/Users/aflynn/Documents/Development/Insight/Adaptive Planning Import/AdaptivePlanningData_20120920.csv",
+		"/C/Users/aflynn/Documents/Development/Insight/Resource Planning FY2014 Budget Import/ResourcePlanning-LoadData-Budgets.sql",
+		"/C/Users/aflynn/Documents/Development/Mobile Events/Mockups/Sample Data Offering Id 2206 v3.js",
+		"/C/IHI_MAIN/trunk/eDefine/eDefine.Framework.Relationships/Entity.cs",
+		"/C/IHI_MAIN/trunk/CSIConsole/UIWeb/User/Controls/SearchUser.ascx",
+		"/C/IHI_MAIN/trunk/CSIConsole/BizTierCSIConsole/User/ConsoleUserManager.cs",
+		"/C/IHI_MAIN/trunk/CSIConsole/BizTierCSIConsole/User/ConsoleUserDALC.cs",
+		"//testappweb.ihi.com/d$/Inetpub/IHI.org/web.config",
+		"/C/Users/aflynn/Documents/Development/Mobile Events/Mobile Events Notes.txt",
+		"//testappweb.ihi.com/d$/Inetpub/IHI.org/Console/Web.config"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"C:\\ihi_main\\trunk\\Database\\IHI\\ChangeScripts\\LMS"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"win.XMLHttpRequest",
+			"ERROR",
+			"          ",
+			"ERRO",
+			"MailDefaultFrom",
+			"securityservice",
+			"www.ihi",
+			"-          ",
+			"updatesAvailable/",
+			"Access-Control-Allow-Headers",
+			"CORS",
+			"version",
+			"hret",
+			", ",
+			" ,",
+			"africa",
+			"Nigel",
+			"IA Wave 27,",
+			"mtshabalala@IHI.org ",
+			"Triple Aim",
+			"400356",
+			"webapi",
+			"29A855F3-2407-4C0E-96E4-3E391DA73054",
+			"ketchum",
+			"ajax",
+			"progress",
+			"CORS request",
+			"Co-op",
+			"Health Foundation",
+			"ICU Seminar ",
+			"ICU Seminar,",
+			"ICU Seminar",
+			"CORS request: Access-Control-Allow-Origin for http://localhost",
+			"Special Session",
+			"Session Session",
+			"DBConnectionString",
+			"GetSearchResults",
+			"User",
+			"search",
+			"search individuals",
+			"sql",
+			"10",
+			"int",
+			"httpCompression",
+			"httpCOmpression",
+			"/javascript",
+			"JSON",
+			"html",
+			".Email",
+			"allowDefinition",
+			"LMS",
+			"([A-Z]+).+\\n",
+			"([A-Z])+ .+\\n",
+			"([A-Z]).+\\n",
+			"[0-9]+ \\n",
+			"[0-9]+\\n",
+			" [0-9]\\n",
+			"\n",
+			"([a-zA-Z])\\n([a-zA-Z])",
+			"\n",
+			"([a-zA-Z])\\n([a-zA-Z])",
+			"([0-9])\\n",
+			"inetpub",
+			"&cop",
+			"ihiauth4",
+			"errorCode",
+			"ERROR",
+			"o",
+			"",
+			"RoleAssignment",
+			", ",
+			"\\t",
+			",\\n",
+			", \\n",
+			" numeric(5, 2)",
+			"/surveys/respond",
+			"41832aed-4786-4bfe-a793-4da2bc7a3d6f",
+			"ERROR",
+			"A922FB75-1657-4F98-A85B-CB5D8400C03C",
+			"66771F37-F922-4021-AE20-5851D6A1B9F6",
+			"ERROR",
+			"InitAndLogGoogleAnalytics",
+			"logGoogleAnalyticsData",
+			"A922FB75-1657-4F98-A85B-CB5D8400C03C",
+			"66771F37-F922-4021-AE20-5851D6A1B9F6",
+			"bce4c1da-c452-40b4-a67e-d4ba43e92fd9",
+			"66771F37-F922-4021-AE20-5851D6A1B9F6",
+			"ERROR",
+			"/lmsapi/api/surveys/respondforcourse\nERROR",
+			"/lmsapi/api/surveys/respondforcourse\n",
+			"AF09A462-4037-11D3-951A-00C026808B0C",
+			"66771F37-F922-4021-AE20-5851D6A1B9F6",
+			"bce4c1da-c452-40b4-a67e-d4ba43e92fd9",
+			"66771F37-F922-4021-AE20-5851D6A1B9F6",
+			"ERROR",
+			"66771F37-F922-4021-AE20-5851D6A1B9F6",
+			"UserGuid",
+			"66771F37-F922-4021-AE20-5851D6A1B9F6",
+			"24",
+			"xl7018105",
+			">",
+			"*",
+			"sort",
+			"survey",
+			"0E25E11D-D13F-4650-85AB-5D9D9D86D802",
+			"D1C1A71E-A1C2-4DAA-9147-D2976A73ED68",
+			"222CC18B-9482-48F2-95E5-B6937A17C09A",
+			"0E25E11D-D13F-4650-85AB-5D9D9D86D802",
+			"6D2B36C7-EEE1-41B4-A852-67D1C4837404",
+			"0E25E11D-D13F-4650-85AB-5D9D9D86D802",
+			"OID-",
+			"IHI",
+			"OID-",
+			"registry",
+			"CLSID",
+			"HKEY",
+			"value 3",
+			"2442378e7c11",
+			"/\n",
+			"\n>",
+			"COM",
+			"path",
+			"Tag Organization",
+			"compila",
+			"\\n",
+			"CatalogUserSummarySet",
+			"ActiveCatalogSet",
+			"39de5d1e-96f7-4bad-b9d9-b1db8e299c71"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"",
+			"-",
+			",",
+			"m.tshabalala69@gmail.com",
+			"Co Op",
+			"\\1\\n",
+			"\\n",
+			" ",
+			"\\1 \\2",
+			"\\n",
+			"\\1 \\2",
+			"\\1 ",
+			"-",
+			"], [",
+			" ",
+			",",
+			", ",
+			"",
+			": '',\\n",
+			": '',",
+			" ",
+			"$2\\t$4\\t$5\\t$6\\t$8",
+			"$2\\t$4\\t$5\\t$6\\t$7",
+			"\\t$1",
+			"\\t",
+			"\\t$1\\t",
+			"\\t$1",
+			"',\\n'",
+			"\\n",
+			"",
+			",\\n",
+			"'\\n'",
+			"','",
+			"$1,$2",
+			" numeric(5, 2),\\n",
+			"$1 - $2",
+			"update ins_Project set Name = '' where AccountingCode = '$1",
+			"',\\n'",
+			"',\\n,'",
+			"$1', '$2",
+			"$1 ",
+			"$1', '",
+			"$1', '$2",
+			"$0",
+			"$0', '$1",
+			"$0,",
+			"$0",
+			" Unallocated",
+			"'),\\n('",
+			"', '",
+			",\\n",
+			")\\n(",
+			"'\\n'",
+			"'",
+			"' ",
+			"',' ",
+			"'),\\n('",
+			"",
+			"','",
+			"),\\n(",
+			"',\\n'",
+			"'\\n'",
+			"\"\"",
+			"\\\"",
+			" ",
+			"cost",
+			"@catalogGuid",
+			"Project Edit",
+			"'",
+			" - ",
+			"",
+			"LMSAPI",
+			"PROD_",
+			"DAA10197SQL006",
+			"TEST",
+			"\\t",
+			"app.ihi.org",
+			" "
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": false
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 94.0
+	},
+	"output.jslint_result_view":
+	{
+		"height": 100.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 94.0
+	},
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 165.0,
+	"status_bar_visible": true
+}

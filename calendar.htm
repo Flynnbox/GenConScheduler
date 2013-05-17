@@ -18,182 +18,23 @@
 	<table>
 		<tbody data-bind="foreach: selectedEvents">
 			<tr>
-				<td data-bind="text: getEventBlock($data)"></td>
+				<td data-bind="text: gencon.events.getEventBlock($data)"></td>
 			</tr>
 		</tbody>
 	</table>
 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script type="text/javascript" src="knockout-2.2.1.js"></script>
-<script type="text/javascript" src="gencon.js"></script>
+<script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
+<script type="text/javascript" src="gencon_data_2013.js"></script>
+<script type="text/javascript" src="gencon.events.js"></script>
 <script type="text/javascript"> 
-	var rpgs = filterEvents(isRpg);
-	var cthulhu = $.grep(rpgs, function(event){ return getSystem(event) === 'Call of Cthulhu';});
-	var cthulhuCodes = $.map(cthulhu, function(event){ return getCode(event); });
+	//var rpgs = gencon.events.filterEvents(gencon.data, gencon.events.isRpg);
+	//var cthulhu = gencon.events.filterEvents(rpgs, isCthulhu);
+	//var cthulhuCodes = $.map(cthulhu, function(event){ return gencon.events.getCode(event); });
 
-function filterEvents(filter){
-	return $.grep(gencon.events, filter);
-}
-
-function isRpg(event){
-	return getEventType(event) === 'RPG - Role Playing Game';
-}
-
-function startsAtOrAfter(date){
-	return getStartDate(event) >= date;
-}
-
-function endsByOrBefore(date){
-	return getEndDate(event) <= date;
-}
-
-function getCode(event){
-	return event['Game Code'];
-}
-
-function getTitle(event){
-	return event['Title'];
-}
-
-function getEventType(event){
-	return event['Event Type'];
-}
-
-function getSystem(event){
-	return event['Game System'];
-}
-
-function getStartDate(event){
-	return event['Start Date'];
-}
-
-function getStartDateAsDate(event){
-	return new Date(event['Start Date']);
-}
-
-function getEndDate(event){
-	return event['End Date'];
-}
-
-function getEndDateAsDate(event){
-	return new Date(event['End Date']);
-}
-
-function getDuration(event){
-	return event['Duration'];
-}
-
-function getLocation(event){
-	return event['Location'];
-}
-
-function getRoom(event){
-	return event['Room Name'];
-}
-
-function getEventBrief(event, separator){
-	var temp = [];
-	temp.push("Code:");
-	temp.push(getCode(event));
-	temp.push("Title:");
-	temp.push(getTitle(event));
-	temp.push("Type:");
-	temp.push(getEventType(event));
-	temp.push("System:");
-	temp.push(getSystem(event));
-	temp.push("Start:");
-	temp.push(getStartDate(event));
-	temp.push("End:");
-	temp.push(getEndDate(event));
-	temp.push("Duration:");
-	temp.push(getDuration(event));
-	temp.push("Location:");
-	temp.push(getLocation(event));
-	temp.push("Room:");
-	temp.push(getRoom(event));
-	return isUndefined(separator) ? temp.join(' ') : temp.join(separator);
-}
-
-function getEventBlock(event, separator){
-	var temp = [];
-	temp.push(getCode(event));
-	temp.push(getTitle(event));
-	temp.push(getSystem(event));
-	temp.push(getStartDate(event) + ' - ' + getEndDate(event) + ' (' + getDuration(event) + ')');
-	temp.push(getLocation(event) + ': ' + getRoom(event));
-	return isUndefined(separator) ? temp.join('\n') : temp.join(separator);
-}
-
-function sortByStartAndEndDate(a, b){
-	return getStartDateAsDate(a) === getStartDateAsDate(b) ? sortByEndDate(a, b) : sortByStartDate(a, b);
-}
-
-function sortByStartDate(a, b){
-	return getStartDateAsDate(a) > getStartDateAsDate(b) ? 1 : -1;
-}
-
-function sortByEndDate(a, b){
-	return getEndDateAsDate(a) > getEndDateAsDate(b) ? 1 : -1;
-}
-
-function doEventsOverlap(a, b){
-	return getStartDateAsDate(a) < getEndDateAsDate(b) && getEndDateAsDate(a) > getStartDateAsDate(b);
-}
-
-function isNonOverlappingEvent(candidateEvent, events){
-	return $.grep(events, function(event){ return doEventsOverlap(event, candidateEvent)}).length === 0;
-}
-
-function isUndefined(object){
-	return typeof object === 'undefined';
-}
-
-function MyEventsViewModel(selectedEvents){
-	var self = this;
-	self.selectedEvents = ko.observableArray(selectedEvents);
-}
-
-function getEventByCode(code){
-	return $.grep(gencon.events, function(event){ return getCode(event) === code; })[0];
-}
-
-function getEventsFromCodes(codes){
-	return $.map(codes, function(code){ return getEventByCode(code); });
-}
-
-function getGroupsOfNonOverlappingEvents(events){
-	var eventsToGroup = events.slice(0);
-			length = events.length,
-			groups = [];
-
-	while(!areAllEventsGrouped(eventsToGroup)){
-		//console.log("All events are not grouped, so starting loop");
-		groups.push(getGroupOfNonOverlappingEvents(eventsToGroup));
-	}
-
-	return groups;
-}
-
-function areAllEventsGrouped(events){
-	return $.grep(events, function(event){ return !event.isInGroup; }).length === 0;
-}
-
-function getGroupOfNonOverlappingEvents(events){
-	var length = events.length,
-			group = [];
-
-	for (var i = 0; i < length; i++) {
-		if (events[i].isInGroup) {
-			continue;
-		};
-
-		if (isNonOverlappingEvent(events[i], group)){
-			group.push(events[i]);
-			events[i].isInGroup = true;
-		}
-	};
-
-	return group;
+function isCthulhu(event){
+	return gencon.events.getSystem(event) === 'Call of Cthulhu';
 }
 
 var selectedEvents = [
@@ -331,8 +172,13 @@ var selectedEvents = [
 	"RPG1342602"
 	]
 
-	var myEvents = getEventsFromCodes(selectedEvents).sort(sortByStartAndEndDate);
-	var myGroupedEvents = getGroupsOfNonOverlappingEvents(myEvents);
+	function MyEventsViewModel(selectedEvents){
+		var self = this;
+		self.selectedEvents = ko.observableArray(selectedEvents);
+	}
+
+	var myEvents = gencon.events.getEventsFromCodes(gencon.data, selectedEvents).sort(gencon.events.sortByStartAndEndDate);
+	var myGroupedEvents = gencon.events.getGroupsOfNonOverlappingEvents(myEvents);
 	var myEventsViewModel = new MyEventsViewModel(myGroupedEvents[0]);
 
 $(function(){
