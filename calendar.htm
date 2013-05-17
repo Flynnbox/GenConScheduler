@@ -1,0 +1,378 @@
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap.css"/>
+	<link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap-responsive.css">
+</head>
+<body style="margin-left: 5px; margin-right: 5px;">
+	Idea for html table display of events by day
+	Each 30 min span in day is one row (48 rows per 24 hour day)
+	Group each event into largest possible sequence of non-overlapping events for that day
+	Each overlapping group appears in separate column (number of columns >= number of groups)
+	Need precedence value on each event, sorted list of events by precedence, or filter function to sort events
+	<div>
+		GenCon Event Codes:<br/><textarea id="eventCodes" rows="10" cols="50"></textarea>
+	</div>
+
+	Calendar of Events
+	<table>
+		<tbody data-bind="foreach: selectedEvents">
+			<tr>
+				<td data-bind="text: getEventBlock($data)"></td>
+			</tr>
+		</tbody>
+	</table>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="knockout-2.2.1.js"></script>
+<script type="text/javascript" src="gencon.js"></script>
+<script type="text/javascript"> 
+	var rpgs = filterEvents(isRpg);
+	var cthulhu = $.grep(rpgs, function(event){ return getSystem(event) === 'Call of Cthulhu';});
+	var cthulhuCodes = $.map(cthulhu, function(event){ return getCode(event); });
+
+function filterEvents(filter){
+	return $.grep(gencon.events, filter);
+}
+
+function isRpg(event){
+	return getEventType(event) === 'RPG - Role Playing Game';
+}
+
+function startsAtOrAfter(date){
+	return getStartDate(event) >= date;
+}
+
+function endsByOrBefore(date){
+	return getEndDate(event) <= date;
+}
+
+function getCode(event){
+	return event['Game Code'];
+}
+
+function getTitle(event){
+	return event['Title'];
+}
+
+function getEventType(event){
+	return event['Event Type'];
+}
+
+function getSystem(event){
+	return event['Game System'];
+}
+
+function getStartDate(event){
+	return event['Start Date'];
+}
+
+function getStartDateAsDate(event){
+	return new Date(event['Start Date']);
+}
+
+function getEndDate(event){
+	return event['End Date'];
+}
+
+function getEndDateAsDate(event){
+	return new Date(event['End Date']);
+}
+
+function getDuration(event){
+	return event['Duration'];
+}
+
+function getLocation(event){
+	return event['Location'];
+}
+
+function getRoom(event){
+	return event['Room Name'];
+}
+
+function getEventBrief(event, separator){
+	var temp = [];
+	temp.push("Code:");
+	temp.push(getCode(event));
+	temp.push("Title:");
+	temp.push(getTitle(event));
+	temp.push("Type:");
+	temp.push(getEventType(event));
+	temp.push("System:");
+	temp.push(getSystem(event));
+	temp.push("Start:");
+	temp.push(getStartDate(event));
+	temp.push("End:");
+	temp.push(getEndDate(event));
+	temp.push("Duration:");
+	temp.push(getDuration(event));
+	temp.push("Location:");
+	temp.push(getLocation(event));
+	temp.push("Room:");
+	temp.push(getRoom(event));
+	return isUndefined(separator) ? temp.join(' ') : temp.join(separator);
+}
+
+function getEventBlock(event, separator){
+	var temp = [];
+	temp.push(getCode(event));
+	temp.push(getTitle(event));
+	temp.push(getSystem(event));
+	temp.push(getStartDate(event) + ' - ' + getEndDate(event) + ' (' + getDuration(event) + ')');
+	temp.push(getLocation(event) + ': ' + getRoom(event));
+	return isUndefined(separator) ? temp.join('\n') : temp.join(separator);
+}
+
+function sortByStartAndEndDate(a, b){
+	return getStartDateAsDate(a) === getStartDateAsDate(b) ? sortByEndDate(a, b) : sortByStartDate(a, b);
+}
+
+function sortByStartDate(a, b){
+	return getStartDateAsDate(a) > getStartDateAsDate(b) ? 1 : -1;
+}
+
+function sortByEndDate(a, b){
+	return getEndDateAsDate(a) > getEndDateAsDate(b) ? 1 : -1;
+}
+
+function doEventsOverlap(a, b){
+	return getStartDateAsDate(a) < getEndDateAsDate(b) && getEndDateAsDate(a) > getStartDateAsDate(b);
+}
+
+function isNonOverlappingEvent(candidateEvent, events){
+	return $.grep(events, function(event){ return doEventsOverlap(event, candidateEvent)}).length === 0;
+}
+
+function isUndefined(object){
+	return typeof object === 'undefined';
+}
+
+function MyEventsViewModel(selectedEvents){
+	var self = this;
+	self.selectedEvents = ko.observableArray(selectedEvents);
+}
+
+function getEventByCode(code){
+	return $.grep(gencon.events, function(event){ return getCode(event) === code; })[0];
+}
+
+function getEventsFromCodes(codes){
+	return $.map(codes, function(code){ return getEventByCode(code); });
+}
+
+function getGroupsOfNonOverlappingEvents(events){
+	var eventsToGroup = events.slice(0);
+			length = events.length,
+			groups = [];
+
+	while(!areAllEventsGrouped(eventsToGroup)){
+		//console.log("All events are not grouped, so starting loop");
+		groups.push(getGroupOfNonOverlappingEvents(eventsToGroup));
+	}
+
+	return groups;
+}
+
+function areAllEventsGrouped(events){
+	return $.grep(events, function(event){ return !event.isInGroup; }).length === 0;
+}
+
+function getGroupOfNonOverlappingEvents(events){
+	var length = events.length,
+			group = [];
+
+	for (var i = 0; i < length; i++) {
+		if (events[i].isInGroup) {
+			continue;
+		};
+
+		if (isNonOverlappingEvent(events[i], group)){
+			group.push(events[i]);
+			events[i].isInGroup = true;
+		}
+	};
+
+	return group;
+}
+
+var selectedEvents = [
+	"RPG1341365",
+	"RPG1343851",
+	"RPG1343852",
+	"RPG1346425",
+	"RPG1340411",
+	"RPG1340412",
+	"RPG1340414",
+	"RPG1346888",
+	"RPG1344140",
+	"RPG1342205",
+	"RPG1340321",
+	"RPG1340322",
+	"RPG1340666",
+	"RPG1346435",
+	"RPG1344570",
+	"RPG1344570",
+	"RPG1344761",
+	"RPG1344167",
+	"RPG1344165",
+	"RPG1342726",
+	"RPG1342727",
+	"RPG1346437",
+	"RPG1343489",
+	"RPG1345570",
+	"RPG1344945",
+	"RPG1344944",
+	"RPG1343322",
+	"RPG1345617",
+	"RPG1345618",
+	"RPG1346881",
+	"RPG1346876",
+	"RPG1346887",
+	"RPG1346885",
+	"RPG1343891",
+	"RPG1343892",
+	"RPG1343893",
+	"RPG1343894",
+	"RPG1344037",
+	"RPG1344154",
+	"RPG1344155",
+	"RPG1344156",
+	"RPG1341887",
+	"RPG1342590",
+	"RPG1342603",
+	"RPG1341791",
+	"RPG1341794",
+	"RPG1341841",
+	"RPG1342593",
+	"RPG1342605",
+	"RPG1340327",
+	"RPG1341888",
+	"RPG1341788",
+	"RPG1342620",
+	"RPG1345049",
+	"RPG1342619",
+	"RPG1342596",
+	"RPG1342607",
+	"RPG1340328",
+	"RPG1341795",
+	"RPG1342577",
+	"RPG1340418",
+	"RPG1343085",
+	"RPG1341753",
+	"RPG1344310",
+	"RPG1345048",
+	"RPG1345652",
+	"RPG1344505",
+	"RPG1342614",
+	"RPG1344095",
+	"RPG1342599",
+	"RPG1342621",
+	"RPG1342014",
+	"RPG1342751",
+	"RPG1342578",
+	"RPG1342591",
+	"RPG1342604",
+	"RPG1341889",
+	"RPG1344229",
+	"RPG1341793",
+	"RPG1341796",
+	"RPG1344103",
+	"RPG1345616",
+	"RPG1342618",
+	"RPG1342594",
+	"RPG1342606",
+	"RPG1340329",
+	"RPG1342015",
+	"RPG1342622",
+	"RPG1344121",
+	"RPG1344230",
+	"RPG1342617",
+	"RPG1341890",
+	"RPG1342597",
+	"RPG1342608",
+	"RPG1341797",
+	"RPG1342579",
+	"RPG1340419",
+	"RPG1343358",
+	"RPG1343151",
+	"RPG1341745",
+	"RPG1341747",
+	"RPG1341751",
+	"RPG1345660",
+	"RPG1342373",
+	"RPG1342600",
+	"RPG1347121",
+	"RPG1343426",
+	"RPG1342752",
+	"RPG1344130",
+	"RPG1342016",
+	"RPG1342592",
+	"RPG1342609",
+	"RPG1341798",
+	"RPG1341891",
+	"RPG1344131",
+	"RPG1342595",
+	"RPG1342610",
+	"RPG1347122",
+	"RPG1342784",
+	"RPG1340330",
+	"RPG1342623",
+	"RPG1342598",
+	"RPG1342580",
+	"RPG1342611",
+	"RPG1341799",
+	"RPG1344313",
+	"RPG1342374",
+	"RPG1342601",
+	"RPG1342616",
+	"RPG1342753",
+	"RPG1342017",
+	"RPG1342602"
+	]
+
+	var myEvents = getEventsFromCodes(selectedEvents).sort(sortByStartAndEndDate);
+	var myGroupedEvents = getGroupsOfNonOverlappingEvents(myEvents);
+	var myEventsViewModel = new MyEventsViewModel(myGroupedEvents[0]);
+
+$(function(){
+	ko.applyBindings(myEventsViewModel);
+});
+
+
+/*
+Age Required: "Everyone (6+)"
+Attendee Registration?: "Yes, they can register for this round without having played in any other events"
+Cost: 2
+Duration: 1
+Email Contact: "contact@megagaming.org"
+End Date: "8/15/2013 9:00"
+Event Type: "RPG - Role Playing Game"
+Experience Required: "None (You've never played before - rules will be taught)"
+GM Names: "Mark Bannon III"
+Game Code: "RPG1340321"
+Game System: "Do: Pilgrims of the Flying Temple"
+Group: "MEGA"
+Last Modified: "5/8/2013 12:44"
+Location: "Marriott"
+Long Description: ""
+Materials Provided: "Yes"
+Maximum Players: 4
+Minimum Play Time: null
+Minimum Players: 2
+Room Name: "Marriott Blrm 7"
+Round Number: 1
+Rules Edition: "1st"
+Short Description: "Come try this fun and innovative collaborative storytelling game which is slapstick fantasy storytelling about helping people and getting into trouble."
+Special Category: "none"
+Start Date: "8/15/2013 8:00"
+Table Number: "1"
+Tickets Available: 4
+Title: "Introductory Do"
+Total Rounds: 1
+Tournament?: "No"
+Web Address: "www.megagaming.org"
+*/
+</script>
+</body>
+</html>
