@@ -46,12 +46,20 @@ gencon.events = (function() {
 		return new Date(event['Start Date']);
 	},
 
+	getStartDateFormatted = function(event) {
+		return getFormattedDate(getStartDateAsDate(event));		
+	},
+
 	getEndDate = function(event) {
 		return event['End Date'];
 	},
 
 	getEndDateAsDate = function(event) {
 		return new Date(event['End Date']);
+	},
+
+	getEndDateFormatted = function(event) {
+		return getFormattedDate(getEndDateAsDate(event));		
 	},
 
 	getDuration = function(event) {
@@ -94,7 +102,7 @@ gencon.events = (function() {
 		temp.push(getCode(event));
 		temp.push(getTitle(event));
 		temp.push(getSystem(event));
-		temp.push(getStartDate(event) + ' - ' + getEndDate(event) + ' (' + getDuration(event) + ')');
+		temp.push(getStartDateFormatted(event) + ' - ' + getEndDateFormatted(event) + ' (' + getDuration(event) + ')');
 		temp.push(getLocation(event) + ': ' + getRoom(event));
 		return isUndefined(separator) ? temp.join('\n') : temp.join(separator);
 	},
@@ -164,6 +172,16 @@ gencon.events = (function() {
 		}
 		return group;
 	},
+
+	getFormattedDate = function(date){
+		var minutes = date.getMinutes().toString().length > 1 ? date.getMinutes() : '00';
+		return getDayName(date) + ' ' + date.getHours() + ':' + minutes;
+	},
+
+	getDayName = function(date){
+		var dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+		return dayNames[date.getDay()];
+	}
 
 	isUndefined = function(object) {
 		return typeof object === 'undefined';

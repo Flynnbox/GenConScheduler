@@ -15,16 +15,10 @@
 	</div>
 
 	Calendar of Events
-	<table border="1">
+	<table>
 		<tbody data-bind="foreach: selectedEvents">
-<<<<<<< HEAD
-
-			<tr data-bind="style: { height: (getDuration($data) * 15) + 'px' }">
-				<td data-bind="text: getEventBlock($data)"></td>
-=======
 			<tr>
 				<td data-bind="text: gencon.events.getEventBlock($data)"></td>
->>>>>>> db3c4068dcee53e6b70463860f0b6afb64eab2d9
 			</tr>
 		</tbody>
 	</table>
