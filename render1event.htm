@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Gantt Chart Example 1</title>
+<link type="text/css" href="http://mbostock.github.io/d3/style.css" rel="stylesheet" />
+<link type="text/css" href="./gantt.css" rel="stylesheet" />
+</head>
+<body>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="./dk8996-Gantt-Chart-604b3bd/lib/d3/d3.v3.min.js"></script>
+	<script type="text/javascript" src="./dk8996-Gantt-Chart-604b3bd/gantt-chart-d3.1.js"></script>
+	<script type="text/javascript" src="./gencon_data_2013.js"></script>
+	<script type="text/javascript" src="./gencon.selectedEvents.js"></script>
+	<script type="text/javascript" src="./gencon.events.js"></script>
+	<script type="text/javascript">
+
+	var selectedEvents = [gencon.selectedEvents[0]]
+			myEvents = gencon.events.getEventsFromCodes(gencon.data, selectedEvents).sort(gencon.events.sortByStartAndEndDate),
+			format = "%H:%M",
+			width = 800,
+			height = 800;
+
+	var chart = d3.select('body').append('svg:svg')
+		.attr('class', 'chart');
+
+	chart.selectAll().data(myEvents, gencon.events.getCode)
+		.enter().append('svg:rect')
+		.attr('x', 390)
+		.attr('y', 30)
+		.attr('height', 110)
+		.attr('width', 160)
+
+	chart.selectAll("text").data(myEvents, gencon.events.getCode)
+  	.enter().append("svg:text")
+  	.attr("x", 400)
+  	.attr("y", 50)
+  	.attr("text-anchor", "start")
+  	.text(gencon.events.getCode)
+		.append('tspan')
+			.attr('x', 400)
+			.attr('y', 70)
+			.text(gencon.events.getTitle)
+		.append('tspan')
+			.attr('x', 400)
+			.attr('y', 90)
+			.text(gencon.events.getSystem)
+		.append('tspan')
+			.attr('x', 400)
+			.attr('y', 110)
+			.text(gencon.events.getStartDate)
+		.append('tspan')
+			.attr('x', 400)
+			.attr('y', 130)
+			.text(gencon.events.getEndDate)
+
+	chart.selectAll().data(myEvents, gencon.events.getCode)
+		.enter().append("foreignObject")
+		.attr('class', 'foreignobject')
+    .attr("x", 400)
+    .attr("y", 200)
+    .attr("width", 200)
+    .attr("height", 300)
+    .append("xhtml:body")
+    .append("div")
+    .attr('class', 'event')
+    .html(gencon.events.getEventBlock(myEvents[0]).split('\n').join('<br/>'));
+
+	</script>
+</body>
+</html>

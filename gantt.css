@@ -1,0 +1,19 @@
+.chart {
+	width: 800;
+	height: 800;
+}
+
+.chart rect {
+   stroke: white;
+   fill: steelblue;
+}
+
+.foreignobject {
+	overflow: hidden;
+}
+
+.event {
+	background-color: green;
+	padding: 5px;
+	overflow: 
+}

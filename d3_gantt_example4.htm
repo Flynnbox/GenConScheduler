@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Gantt Chart Example 1</title>
+<link type="text/css" href="http://mbostock.github.io/d3/style.css" rel="stylesheet" />
+<link type="text/css" href="./gantt.css" rel="stylesheet" />
+</head>
+<body>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="./dk8996-Gantt-Chart-604b3bd/lib/d3/d3.v3.min.js"></script>
+	<script type="text/javascript" src="./dk8996-Gantt-Chart-604b3bd/gantt-chart-d3.1.js"></script>
+	<script type="text/javascript" src="./gencon_data_2013.js"></script>
+	<script type="text/javascript" src="./gencon.selectedEvents.js"></script>
+	<script type="text/javascript" src="./gencon.events.js"></script>
+	<script type="text/javascript">
+
+	var myEvents = gencon.events.getEventsFromCodes(gencon.data, gencon.selectedEvents).sort(gencon.events.sortByStartAndEndDate),
+			myGroupedEvents = gencon.events.getGroupsOfNonOverlappingEvents(myEvents),
+			format = "%H:%M",
+			width = 800,
+			height = 800;
+
+	var chart = d3.select('body').append('svg:svg')
+		.attr('class', 'chart');
+
+	chart.selectAll().data(myEvents, gencon.events.getCode)
+		.enter().append('svg:rect')
+		.attr('y', function(d, i) {return i * 20;})
+		.attr('height', 50)
+		.attr('width', 50)
+
+	chart.selectAll("text").data(myEvents, gencon.events.getCode)
+  	.enter().append("svg:text")
+  	//.attr("x", 20)
+  	.attr("y", function(d, i) {return i * 20;})
+  	.attr("dx", 100) // padding-right
+  	//.attr("dy", ".35em") // vertical-align: middle
+  	.attr("text-anchor", "end") // text-align: right
+		.text(gencon.events.getCode)
+
+	</script>
+</body>
+</html>
