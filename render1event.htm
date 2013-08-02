@@ -16,54 +16,76 @@
 
 	var selectedEvents = [gencon.selectedEvents[0]]
 			myEvents = gencon.events.getEventsFromCodes(gencon.data, selectedEvents).sort(gencon.events.sortByStartAndEndDate),
-			format = "%H:%M",
 			width = 800,
 			height = 800;
 
-	var chart = d3.select('body').append('svg:svg')
+	var chart = d3.select('body')
+		.append('svg:svg')
 		.attr('class', 'chart');
 
-	chart.selectAll().data(myEvents, gencon.events.getCode)
-		.enter().append('svg:rect')
-		.attr('x', 390)
-		.attr('y', 30)
-		.attr('height', 110)
-		.attr('width', 160)
 
-	chart.selectAll("text").data(myEvents, gencon.events.getCode)
-  	.enter().append("svg:text")
-  	.attr("x", 400)
-  	.attr("y", 50)
-  	.attr("text-anchor", "start")
-  	.text(gencon.events.getCode)
-		.append('tspan')
-			.attr('x', 400)
-			.attr('y', 70)
-			.text(gencon.events.getTitle)
-		.append('tspan')
-			.attr('x', 400)
-			.attr('y', 90)
-			.text(gencon.events.getSystem)
-		.append('tspan')
-			.attr('x', 400)
-			.attr('y', 110)
-			.text(gencon.events.getStartDate)
-		.append('tspan')
-			.attr('x', 400)
-			.attr('y', 130)
-			.text(gencon.events.getEndDate)
+	renderEvent();
+	renderTextAsSVG();
 
-	chart.selectAll().data(myEvents, gencon.events.getCode)
-		.enter().append("foreignObject")
-		.attr('class', 'foreignobject')
-    .attr("x", 400)
-    .attr("y", 200)
-    .attr("width", 200)
-    .attr("height", 300)
-    .append("xhtml:body")
-    .append("div")
-    .attr('class', 'event')
-    .html(gencon.events.getEventBlock(myEvents[0]).split('\n').join('<br/>'));
+	//render calender time
+	var schedule = d3.time.scale().range([0, 48]);
+	//.ticks(d3.time.minutes, 30);
+
+	//render calender days
+
+	//position event on chart
+
+	function renderEvent(){
+		chart.selectAll().data(myEvents, gencon.events.getCode)
+			.enter().append('svg:rect')
+			.attr('x', 390)
+			.attr('y', 30)
+			.attr('height', 110)
+			.attr('width', 170)
+	}
+
+	//text option A - pure SVG
+	function renderTextAsSVG(){
+		var text = gencon.events.getEventBlock(myEvents[0]).split('\n');
+
+		chart.selectAll("text").data(myEvents, gencon.events.getCode)
+	  	.enter().append("svg:text")
+	  	.attr("x", 400)
+	  	.attr("y", 50)
+	  	.attr("text-anchor", "start")
+	  	.text(text[0])
+			.append('tspan')
+				.attr('x', 400)
+				.attr('y', 70)
+				.text(text[1])
+			.append('tspan')
+				.attr('x', 400)
+				.attr('y', 90)
+				.text(text[2])
+			.append('tspan')
+				.attr('x', 400)
+				.attr('y', 110)
+				.text(text[3])
+			.append('tspan')
+				.attr('x', 400)
+				.attr('y', 130)
+				.text(text[4])
+	};
+
+	//text option B - embedded HTML
+	function renderTextAsHtml(){
+		chart.selectAll().data(myEvents, gencon.events.getCode)
+			.enter().append("foreignObject")
+			.attr('class', 'foreignobject')
+	    .attr("x", 400)
+	    .attr("y", 200)
+	    .attr("width", 200)
+	    .attr("height", 300)
+	    .append("xhtml:body")
+	    .append("div")
+	    .attr('class', 'event')
+	    .html(gencon.events.getEventBlock(myEvents[0]).split('\n').join('<br/>'));
+  }
 
 	</script>
 </body>
